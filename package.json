@@ -1,0 +1,56 @@
+{
+  "name": "web-scraping",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LinhTruongVan/web-scraping.git"
+  },
+  "keywords": [],
+  "author": "Linh Truong",
+  "bugs": {
+    "url": "https://github.com/LinhTruongVan/web-scraping/issues"
+  },
+  "homepage": "https://github.com/LinhTruongVan/web-scraping#readme",
+  "scripts": {
+    "start": "npm run serve",
+    "build": "npm run build-ts && npm run tslint",
+    "serve": "node dist/server.js",
+    "watch-node": "nodemon dist/server.js",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\"",
+    "test": "jest --forceExit --coverage --verbose",
+    "watch-test": "npm run test -- --watchAll",
+    "build-ts": "tsc",
+    "watch-ts": "tsc -w",
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "debug": "npm run build && npm run watch-debug",
+    "serve-debug": "nodemon --inspect dist/server.js",
+    "watch-debug": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run serve-debug\""
+  },
+  "devDependencies": {
+    "@types/cheerio": "^0.22.9",
+    "@types/jest": "^23.3.9",
+    "@types/node": "^10.12.9",
+    "@types/puppeteer": "^1.10.0",
+    "@types/request": "^2.48.1",
+    "@types/supertest": "^2.0.6",
+    "@types/url-parse": "^1.4.1",
+    "chai": "^4.2.0",
+    "concurrently": "^4.1.0",
+    "jest": "^23.6.0",
+    "nodemon": "^1.18.6",
+    "supertest": "^3.3.0",
+    "ts-jest": "^23.10.4",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "typescript": "^3.1.6"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.3",
+    "cheerio": "^1.0.0-rc.2",
+    "puppeteer": "^1.10.0",
+    "request": "^2.88.0",
+    "url-parse": "^1.4.4"
+  }
+}
